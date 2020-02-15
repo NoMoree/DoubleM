@@ -12,14 +12,15 @@ namespace DoubleMTask
 
         public DoubleM(int n)
         {
-            this.n = n;
+            if (n % 2 == 0)
+                throw new System.ArgumentException("Parameter 'n' must be odd number", "n");
+            if (n < 3 || n > 10000)
+                throw new System.ArgumentException("Parameter must be between 3 < 'n' < 10 000.", "n");
 
+            this.n = n;
             this.InitLines();
 
             this.CalculateDraw();
-
-
-            Console.WriteLine(this.ToString());
         }
 
         private void InitLines()
