@@ -16,7 +16,7 @@ namespace DoubleMTask
 
             this.InitLines();
 
-            // this.CalculateDraw();
+            this.CalculateDraw();
 
 
             Console.WriteLine(this.ToString());
@@ -32,8 +32,54 @@ namespace DoubleMTask
 
         private void CalculateDraw()
         {
-            throw new NotImplementedException();
+            this.DrawOutsideM();
+            this.DrawBottomSide();
+            this.DrawTopSide();
         }
+
+        private void DrawOutsideM()
+        {
+            for (int line = 0; line < this.n; line++)
+            {
+                for (int pos = 0; pos < this.n - line; pos++)
+                {
+                    Lines[line][pos] = true;
+                    Lines[line][lineLenght - pos - 1] = true;
+                }
+            }
+        }
+
+        private void DrawTopSide()
+        {
+            int midLine = this.n / 2 + 1;
+            int possOffset = this.n + this.n / 2;
+
+            for (int line = 0; line < midLine; line++)
+            {
+                for (int pos = 0; pos < 1 + line * 2; pos++)
+                {
+                    Lines[midLine + line][pos + possOffset - line] = true;
+                    Lines[midLine + line][lineLenght - 1 - pos + line - possOffset] = true;
+                }
+            }
+        }
+
+        private void DrawBottomSide()
+        {
+            int midLine = this.n / 2 + 1;
+            int possOffset = this.n * 2;
+            for (int i = 0; i < midLine; i++)
+            {
+                for (int poss = 0; poss < (midLine - i) * 2 - 1; poss++)
+                {
+                    Lines[i][poss + possOffset + i] = true;
+                }
+            }
+        }
+
+
+
+
 
         public override string ToString()
         {
