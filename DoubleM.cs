@@ -12,10 +12,10 @@ namespace DoubleMTask
 
         public DoubleM(int n)
         {
-            if (n % 2 == 0)
-                throw new System.ArgumentException("Parameter 'n' must be odd number", "n");
             if (n < 3 || n > 10000)
                 throw new System.ArgumentException("Parameter must be between 3 < 'n' < 10 000.", "n");
+            if (n % 2 == 0)
+                throw new System.ArgumentException("Parameter 'n' must be odd number", "n");
 
             this.n = n;
             this.InitLines();
@@ -78,9 +78,10 @@ namespace DoubleMTask
             }
         }
 
-
-
-
+        public void PrintToConsole()
+        {
+            Console.WriteLine(this.ToString());
+        }
 
         public override string ToString()
         {

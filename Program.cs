@@ -12,11 +12,19 @@ namespace DoubleMTask
         private static void PrintAllTests()
         {
             DoubleM doubleM;
-            for (int i = 3; i < 8; i += 2)
+            for (int i = 2; i < 8; i++)
             {
-                Console.WriteLine(i);
+                try
+                {
+                    Console.WriteLine(i);
 
-                doubleM = new DoubleM(i);
+                    doubleM = new DoubleM(i);
+                    doubleM.PrintToConsole();
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
             }
         }
     }
