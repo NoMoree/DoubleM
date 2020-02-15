@@ -7,6 +7,12 @@ namespace DoubleMTask
         static void Main(string[] args)
         {
             PrintAllTests();
+
+            // int n = 9999 / 5;
+            // DoubleM doubleM = new DoubleM(n / 5);
+            // doubleM.PrintToConsole();
+
+            Console.WriteLine("\r\nDone!!");
         }
 
         private static void PrintAllTests()
