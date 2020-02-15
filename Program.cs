@@ -8,7 +8,8 @@ namespace DoubleMTask
         {
             PrintAllTests();
 
-            // int n = 9999 / 5;
+            // //my console lag out when i try to print n > 9999/5
+            // int n = 9999;
             // DoubleM doubleM = new DoubleM(n / 5);
             // doubleM.PrintToConsole();
 
