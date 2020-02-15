@@ -109,7 +109,6 @@ namespace DoubleMTask
             for (int line = 0; line < n + 1; line++)
             {
                 sb = new StringBuilder();
-                sb.AppendFormat("lenght({0,3})", Lines[line].Length);
                 for (int pos = 0; pos < lineLenght; pos++)
                 {
                     if (!Lines[line][pos])
@@ -122,9 +121,7 @@ namespace DoubleMTask
                     }
                 }
 
-                // TODO: change
-                // result.AppendLine("" + sb + sb);
-                result.AppendLine("" + sb);
+                result.AppendLine("" + sb + sb);
             }
 
             return result.ToString();
